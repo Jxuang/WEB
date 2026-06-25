@@ -2,22 +2,87 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>個人首頁</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Unsent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("01.JPG"); 
+            background-size: cover;      
+            background-position: center;  
+            background-repeat: no-repeat; 
+            height: 100vh;
+            width: 100vw;
+            position: relative; /* 讓內部的絕對定位可以對齊螢幕 */
+            border: 4px solid #6495ED; 
+            overflow: hidden;
+            /* 套用古典襯線字體 */
+            font-family: "Times New Roman", "PMingLiU", "SimSun", "Songti TC", serif;
+        }
+        
+        /* 🛠️ 新增：上排學號姓名文字樣式 */
+        .top-header {
+            position: absolute;
+            top: 25vh;           /* 調整文字距離螢幕頂部的高度，可以根據畫面微調 */
+            left: 50%;
+            transform: translateX(-50%); /* 水平置中 */
+            color: #FFFDD0;      /* 使用跟你原本按鈕一樣的淡米黃色文字 */
+            font-size: 2rem;     /* 字體大小 */
+            font-weight: 500;
+            letter-spacing: 2px; /* 字距微調 */
+            white-space: nowrap; /* 確保文字在同一行不換行 */
+            text-align: center;
+        }
+        
+        /* 選單容器：強制固定在畫面的下半部 */
+        .nav-links {
+            position: absolute;
+            bottom: 45vh;        /* 距離螢幕底部 35%，避開上方的 Unsent 字樣 */
+            left: 50%;
+            transform: translateX(-50%); /* 完美水平置中 */
+            
+            display: flex;  
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: center;
+            gap: 80px;          /* 文字與中間線的左右間距 */
+        }
+        
+        /* 1. 基礎文字樣式 */
+        .link-item {
+            color: #FFFDD0;      /* 預設黑色 */
+            text-decoration: none;   
+            font-size: 2.2rem;   /* 放大字體，讓它更清晰 */
+            font-weight: bold;   /* 加粗 */
+            transition: color 0.2s ease-in-out; /* 滑動變色的平滑動畫 */
+        }
+
+        /* 2. 滑鼠懸停 (Hover) 變色與發光效果 */
+        .link-item:hover {
+            color: #ffffff;      /* 懸停時變白色，你可以改成任何你想要的顏色 */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5); /* 淡淡的發光感 */
+        }
+
+        /* 3. 分隔線樣式 */
+        .divider {
+            width: 2px;          /* 線條粗細 */
+            height: 45px;        /* 線條高度 */
+            background-color: #000000; /* 分隔線顏色 */
+            opacity: 0.5;        /* 稍微半透明，讓視覺更溫和 */
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <div class="nav-links">
-            <a href="personal.html" class="link-item">個人報告</a>
-            
-            <div class="divider"></div>
-            
-            <a href="team.html" class="link-item">團隊專題</a>
-        </div>
+    <h1 class="top-header">多媒二1 1411322009 余靜宣</h1>
 
+    <div class="nav-links">
+        <a href="personal.html" class="link-item">個人報告</a>
+        <div class="divider"></div>
+        <a href="team.html" class="link-item">團隊專題</a>
     </div>
 
 </body>
